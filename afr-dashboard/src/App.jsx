@@ -1,9 +1,18 @@
-function App() {
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./Pages/Dashboard";
+import Navbar from "./components/Navbar";
+
+export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-600 text-white text-4xl font-bold">
-      Tailwind CSS 4 + React Vite is working 🚀
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          {/* Add more routes (Customers, Products) as needed */}
+        </Routes>
+      </main>
     </div>
   );
 }
-
-export default App;
